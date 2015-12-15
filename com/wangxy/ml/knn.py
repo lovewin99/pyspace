@@ -16,6 +16,7 @@ def classify0(inX, dataSet, labels, k):
     sqDistances = sqDiffMat.sum(axis=1)
     # print 'sqDistances=', sqDistances
     distances = sqDistances**0.5
+    # argsort 返回排序后的下标
     sortedDistIndicies = distances.argsort()
     # print 'sortedDistIndicies=',sortedDistIndicies
     classCount={}
@@ -91,7 +92,7 @@ def datingClassTest():
     print "the total error rate is: %f" % (errorCount/float(numTestVecs))
     print errorCount
 
-# datingClassTest()
+datingClassTest()
 
 # 单条分类器
 def classifyPerson():
