@@ -33,7 +33,7 @@ def gradAscent(dataMatIn, classLabels):
     return weights
 
 dataArr, labelMat = loadDataSet()
-# weight = gradAscent(dataArr, labelMat)
+weight = gradAscent(dataArr, labelMat)
 # print weight
 
 # 画出拟合线
@@ -59,7 +59,7 @@ def plotBestFit(weights):
     plt.xlabel('X1'); plt.ylabel('X2')
     plt.show()
 
-# plotBestFit(weight.getA())
+plotBestFit(weight.getA())
 
 # 随机梯度上升
 def stocGradAscent0(dataMatrix, classLabels):

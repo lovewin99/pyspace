@@ -189,7 +189,7 @@ def createPlot(inTree):
     plotTree(inTree, (0.5,1.0), '')
     plt.show()
 
-# createPlot(trees)
+createPlot(trees)
 
 # 调用
 def classify(inputTree,featLabels,testVec):

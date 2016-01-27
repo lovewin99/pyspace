@@ -52,12 +52,13 @@ def file2matrix(filename):
         index += 1
     return returnMat,classLabelVector
 
+# 优化视图
 datingDataMat,datingLabels = file2matrix('/home/wangxy/data/digits/datingTestSet.txt')
-# fig = plt.figure()
-# ax = fig.add_subplot(111)
-# ax.scatter(datingDataMat[:,0], datingDataMat[:,1], 15.0*array(datingLabels), 15.0*array(datingLabels))
-# # ax.scatter(datingDataMat[:,1], datingDataMat[:,2], 15.0*array(datingLabels), 15.0*array(datingLabels))
-# plt.show()
+fig = plt.figure()
+ax = fig.add_subplot(111)
+ax.scatter(datingDataMat[:,0], datingDataMat[:,1], 15.0*array(datingLabels), 15.0*array(datingLabels))
+# ax.scatter(datingDataMat[:,1], datingDataMat[:,2], 15.0*array(datingLabels), 15.0*array(datingLabels))
+plt.show()
 
 # 归一化
 def autoNorm(dataSet):

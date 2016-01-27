@@ -53,9 +53,9 @@ def buildStump(dataArr,classLabels,D):
                     bestStump['ineq'] = inequal
     return bestStump,minError,bestClasEst
 
-# D = mat(ones((5,1))/5)
-# print 'D=',D
-# buildStump(dataMat, classLabels, D)
+D = mat(ones((5,1))/5)
+print 'D=',D
+buildStump(dataMat, classLabels, D)
 
 # 调用上面函数 训练数据
 def adaBoostTrainDS(dataArr,classLabels,numIt=40):
@@ -98,10 +98,10 @@ def adaClassify(datToClass,classifierArr):
                                  classifierArr[i]['thresh'],\
                                  classifierArr[i]['ineq'])#call stump classify
         aggClassEst += classifierArr[i]['alpha']*classEst
-        print aggClassEst
+        # print 'aggClassEst=',aggClassEst
     return sign(aggClassEst)
 
-print adaClassify([[5,5], [0,0]], classifierArray)
+print 'adaClassify=', adaClassify([[5,5], [0,0]], classifierArray)
 
 # ROC曲线及AUC计算函数
 def plotROC(predStrengths, classLabels):
