@@ -18,6 +18,7 @@ def reDraw(tolS,tolN):
         if tolN < 2: tolN = 2
         myTree=regTrees.createTree(reDraw.rawDat, regTrees.modelLeaf,\
                                    regTrees.modelErr, (tolS,tolN))
+        print 'myTree=', myTree
         yHat = regTrees.createForeCast(myTree, reDraw.testDat, \
                                        regTrees.modelTreeEval)
     else:
