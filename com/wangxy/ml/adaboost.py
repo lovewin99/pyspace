@@ -123,7 +123,9 @@ def plotROC(predStrengths, classLabels):
             ySum += cur[1]
         #draw line from cur to (cur[0]-delX,cur[1]-delY)
         ax.plot([cur[0],cur[0]-delX],[cur[1],cur[1]-delY], c='b')
+        # print 'cur=',cur, '   delx=',delX,'   dely=',delY
         cur = (cur[0]-delX,cur[1]-delY)
+    # ax.plot([0,0.2,0.4,0.6,1.0],[0,0.4,0.7,0.8,1.0],'b--')
     ax.plot([0,1],[0,1],'b--')
     plt.xlabel('False positive rate'); plt.ylabel('True positive rate')
     plt.title('ROC curve for AdaBoost horse colic detection system')

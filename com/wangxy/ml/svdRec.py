@@ -16,9 +16,9 @@ def loadExData():
 Data = loadExData()
 U, Sigma, VT = la.svd(Data)
 
-# print 'U=', U
-# print 'Sigma=', Sigma
-# print 'VT=', VT
+print 'U=', U
+print 'Sigma=', Sigma
+print 'VT=', VT
 
 # 欧式距离
 def ecludSim(inA,inB):
@@ -34,6 +34,15 @@ def cosSim(inA,inB):
     num = float(inA.T*inB)
     denom = la.norm(inA)*la.norm(inB)
     return 0.5+0.5*(num/denom)
+
+# def loadExData():
+#     return[[1, 1, 1, 0, 0],
+#            [2, 2, 2, 0, 0],
+#            [1, 1, 1, 0, 0],
+#            [5, 5, 5, 0, 0],
+#            [1, 1, 0, 2, 2],
+#            [0, 0, 0, 3, 3],
+#            [0, 0, 0, 1, 1]]
 
 # 预测用户对单个物品评价
 def standEst(dataMat, user, simMeas, item):
@@ -77,8 +86,13 @@ def svdEst(dataMat, user, simMeas, item):
     n = shape(dataMat)[1]
     simTotal = 0.0; ratSimTotal = 0.0
     U,Sigma,VT = la.svd(dataMat)
+    print 'dataMat=',shape(dataMat)
+    print 'U=',shape(U)
+    print 'Sigma=',shape(Sigma)
+    print 'VT=',VT
     Sig4 = mat(eye(4)*Sigma[:4]) #arrange Sig4 into a diagonal matrix
     xformedItems = dataMat.T * U[:,:4] * Sig4.I  #create transformed items
+    print 'xformedItems=', xformedItems
     for j in range(n):
         userRating = dataMat[user,j]
         if userRating == 0 or j==item: continue
@@ -89,3 +103,23 @@ def svdEst(dataMat, user, simMeas, item):
         ratSimTotal += similarity * userRating
     if simTotal == 0: return 0
     else: return ratSimTotal/simTotal
+
+myMat = mat(loadExData())
+myMat[0,1]=myMat[0,0]=myMat[1,0]=myMat[2,0]=4
+myMat[3,3]=2
+print 'myMat=',myMat
+print shape(myMat)
+print recommend(myMat, 2, 3, cosSim, svdEst)
+
+def loadExData2():
+    return[[0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 5],
+           [0, 0, 0, 3, 0, 4, 0, 0, 0, 0, 3],
+           [0, 0, 0, 0, 4, 0, 0, 1, 0, 4, 0],
+           [3, 3, 4, 0, 0, 0, 0, 2, 2, 0, 0],
+           [5, 4, 5, 0, 0, 0, 0, 5, 5, 0, 0],
+           [0, 0, 0, 0, 5, 0, 1, 0, 0, 5, 0],
+           [4, 3, 4, 0, 0, 0, 0, 5, 5, 0, 1],
+           [0, 0, 0, 4, 0, 4, 0, 0, 0, 0, 4],
+           [0, 0, 0, 2, 0, 2, 5, 0, 0, 1, 2],
+           [0, 0, 0, 0, 5, 0, 0, 0, 0, 4, 0],
+           [1, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0]]

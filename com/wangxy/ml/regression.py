@@ -48,6 +48,7 @@ def draw(xArr, yArr, ws):
 
 draw(xArr, yArr, ws)
 
+# 局部加权线性回归
 def lwlr(testPoint,xArr,yArr,k=1.0):
     xMat = mat(xArr); yMat = mat(yArr).T
     m = shape(xMat)[0]

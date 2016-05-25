@@ -100,19 +100,29 @@ __author__ = 'wangxy'
 # print s.name
 # print s.__dict__.update()
 
-def kankan(F):
-    def kk():
-        print 'kk'
-        return F()
-    return kk()
+# def kankan(F):
+#     def kk():
+#         print 'kk'
+#         return F()
+#     return kk()
+#
+# def kankan1(F):
+#     print 'kk1'
+#     return F()
+#
+# @kankan1
+# def www():
+#     print 'hello'
+#     return
+#
+# www()
 
-def kankan1(F):
-    print 'kk1'
-    return F()
+# from numpy import *
+# a = mat([[1,2,3],[1,1,1],[1,4,5]])
+# print 'a=',linalg.det(a)
+#
+# print 'ins = ',a.I
 
-@kankan1
-def www():
-    print 'hello'
-    return
-
-www()
+line={}
+line["1"]=2
+print type(line)
