@@ -63,7 +63,7 @@ def lwlr(testPoint,xArr,yArr,k=1.0):
     for j in range(m):                      #next 2 lines create weights matrix
         diffMat = testPoint - xMat[j,:]     #
         weights[j,j] = exp(diffMat*diffMat.T/(-2.0*k**2))
-	print 'weights=',weights
+	# print 'weights=',weights
     xTx = xMat.T * (weights * xMat)
     # print 'xTx=',xTx,'  det=',linalg.det(xTx)
     if linalg.det(xTx) == 0.0:
