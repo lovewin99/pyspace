@@ -1,5 +1,4 @@
 __author__ = 'wangxy'
-
 #coding=utf-8
 
 # a = [2,1,3,4]
@@ -123,6 +122,24 @@ __author__ = 'wangxy'
 #
 # print 'ins = ',a.I
 
-line={}
-line["1"]=2
-print type(line)
+from numpy import *
+
+#余弦相似度
+def cosSimilar(inA,inB):
+	inA=mat(inA)
+	print 'inA=',inA
+	inB=mat(inB)
+	print 'inB=',inB
+	num=float(inA*inB.T)
+	print 'num=',num
+	denom=linalg.norm(inA)*linalg.norm(inB)
+	print 'na=',linalg.norm(inA)
+	print 'nb=',linalg.norm(inB)
+	print 'denom=',denom
+	return 0.5+0.5*(num/denom)
+
+print cosSimilar((1,2),(2,3))
+
+# line={}
+# line["1"]=2
+# print type(line)

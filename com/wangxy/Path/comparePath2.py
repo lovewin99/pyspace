@@ -10,11 +10,11 @@ def loadVertexInfo():
 		strArr = line.strip().split(",",-1)
 		gc[int(strArr[0])] = [float(strArr[1]), float(strArr[2])]
 	return gc
-# path=[41,42,44,46,47,48,53,65,62,61,60,64,54]
-# path1=[41,42,44,46,47,48,53,65,62,61,60,64,54]
-path=[42,44,46,51,58,62,65,66,67,68,73,77]
-path1=[42,44,46,51,58,62,65,66,67,68,73,77]
-path2=[42,45,46,67,52,58,62,65,66,67,76,77]
+path=[41,42,44,46,47,48,53,65,62,61,60,64,54]
+path1=[41,42,44,46,47,48,53,65,62,61,60,64,54]
+# path=[42,44,46,51,58,62,65,66,67,68,73,77]
+# path1=[42,44,46,51,58,62,65,66,67,68,73,77]
+path2=[42,45,46,47,52,58,62,65,66,67,76,77]
 path3=[42,45,49,50,54,64,72,79,78,76,77]
 
 def lonLat2Mercator(lon, lat):
@@ -26,7 +26,7 @@ def lonLat2Mercator(lon, lat):
 def etlx(x, gc, index, length):
 	info = gc.get(x,[0,0])
 	xy=lonLat2Mercator(info[0],info[1])
-	return [int(x), 1, int(xy[0]), int(xy[1]), int(index*1.0/length*100)]
+	return [int(x), 1, int(xy[0]), int(index*1.0/length*100), int(xy[1])]
 
 def etldata(data,gc):
 	info=[]

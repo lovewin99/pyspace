@@ -54,7 +54,7 @@ def buildStump(dataArr,classLabels,D):
     return bestStump,minError,bestClasEst
 
 D = mat(ones((5,1))/5)
-print 'D=',D
+print 'D1=',D
 buildStump(dataMat, classLabels, D)
 
 # 调用上面函数 训练数据

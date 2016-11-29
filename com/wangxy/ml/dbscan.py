@@ -47,11 +47,13 @@ for core in core_points:
 			border_points.append(other)
 			plotted_points.append(other)
 
-
+print 'core1=',core_points
+print 'core_len1=',len(core_points)
 #implement the algorithm
 cluster_label=0
 
 for point in core_points:
+	print 'core!!!!=',core_points
 	if point[2]==0:
 		cluster_label+=1
 		point[2]=cluster_label
@@ -86,6 +88,12 @@ for point in all_points:
 		noise_points.append(point)
 noisex=[]
 noisey=[]
+
+print 'core=',core_points
+print 'core_len=',len(core_points)
+print 'plotted_points=',plotted_points
+print 'plotted_points=',len(plotted_points)
+
 for point in noise_points:
 	noisex.append(point[0])
 	noisey.append(point[1])
