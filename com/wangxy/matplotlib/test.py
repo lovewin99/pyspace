@@ -1,5 +1,5 @@
-__author__ = 'wangxy'
 #coding=utf8
+__author__ = 'wangxy'
 
 import numpy as np
 import matplotlib.pyplot as plt

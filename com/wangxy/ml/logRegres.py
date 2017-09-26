@@ -1,12 +1,12 @@
-__author__ = 'wangxy'
 #coding=utf8
+__author__ = 'wangxy'
 
 from numpy import *
 
 # 载入数据
 def loadDataSet():
     dataMat = []; labelMat = []
-    fr = open('/home/wangxy/data/testSet.txt')
+    fr = open('/Users/wangxy/PycharmProjects/data/testSet.txt')
     for line in fr.readlines():
         lineArr = line.strip().split()
         dataMat.append([1.0, float(lineArr[0]), float(lineArr[1])])

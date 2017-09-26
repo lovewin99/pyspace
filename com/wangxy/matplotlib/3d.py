@@ -1,5 +1,6 @@
-__author__ = 'wangxy'
 #coding=utf8
+__author__ = 'wangxy'
+
 
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
